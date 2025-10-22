@@ -1,3 +1,5 @@
+// src/components/home/HeroSlider.jsx
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
@@ -45,7 +47,7 @@ const HeroSlider = () => {
             <img
               src={slide.img}
               alt={slide.text}
-              className="w-[350px] h-[250px] object-contain mb-6 drop-shadow-lg"
+              className="w-full h-[350px] object-contain mb-6 pt-20 drop-shadow-lg"
               variants={fadeUp}
               initial="hidden"
               animate="visible"
@@ -53,15 +55,15 @@ const HeroSlider = () => {
             />
 
            
-            <motion.h1
-              className="text-3xl md:text-5xl font-bold text-gray-800 px-4 max-w-2xl"
+            <h1
+              className="text-3xl md:text-2xl font-bold text-gray-800 px-4 max-w-2xl"
               variants={fadeUp}
               initial="hidden"
               animate="visible"
               transition={{ duration: 1.2, delay: 0.2 }}
             >
               {slide.text}
-            </motion.h1>
+            </h1>
           </div>
         </SwiperSlide>
       ))}

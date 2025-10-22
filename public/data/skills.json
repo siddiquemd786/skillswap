@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Learn the basics of guitar chords, strumming, and rhythm in a friendly environment.",
+    "image": "https://furtadosschoolofmusic.com/wp-content/uploads/2024/11/guitar-lessons-1568x896.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Improve fluency and pronunciation through interactive conversation sessions.",
+    "image": "https://easypeasyeng.net/wp-content/uploads/2024/10/How_to_Practice_English_Speaking_with_a_Partner-1024x576.webp",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Basic Web Development",
+    "providerName": "Rahul Das",
+    "providerEmail": "rahul@skillswap.com",
+    "price": 30,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Learn HTML, CSS, and basic JavaScript to create responsive websites from scratch.",
+    "image": "https://miro.medium.com/1*V-Jp13LvtVc2IiY2fp4qYw.jpeg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Beginners",
+    "providerName": "Nadia Ahmed",
+    "providerEmail": "nadia@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Relax your mind and strengthen your body through guided yoga sessions.",
+    "image": "https://toneopfit-strapi-prod.s3.ap-south-1.amazonaws.com/Yoga_Positions_For_Beginners_35_Poses_To_Ignite_Your_Practice_02_cdfbf0ebff.jpg",
+    "category": "Health & Wellness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Cooking Traditional Dishes",
+    "providerName": "Farhana Rahman",
+    "providerEmail": "farhana@skillswap.com",
+    "price": 12,
+    "rating": 4.5,
+    "slotsAvailable": 4,
+    "description": "Master traditional recipes and learn the secrets of home-style cooking.",
+    "image": "https://cosmosgroup.sgp1.digitaloceanspaces.com/news/details/3921007.webp",
+    "category": "Cooking"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Photography Basics",
+    "providerName": "Imran Khan",
+    "providerEmail": "imran@skillswap.com",
+    "price": 25,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Understand lighting, angles, and composition to capture professional-looking photos.",
+    "image": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2007/11/beginner-photography-tips.jpg?fit=2560%2C1340&ssl=1",
+    "category": "Art & Creativity"
+  }
+]
