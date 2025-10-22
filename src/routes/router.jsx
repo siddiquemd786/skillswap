@@ -4,6 +4,9 @@ import App from "../App";
 import Home from "../pages/HomePage";
 import SkillDetails from "../components/skills/SkillDetails";
 import HomePage from "../pages/HomePage";
+import Profile from "../pages/Profile";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 
 const router = createBrowserRouter([
@@ -21,7 +24,17 @@ const router = createBrowserRouter([
     path: "/skills/:id",
     element: <SkillDetails />,
     loader: () => fetch("/skills.json").then(res => res.json()), 
-  },
+  },{
+  path: "/profile",
+  element: <Profile></Profile>,
+},{
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      }
       
     ],
   },

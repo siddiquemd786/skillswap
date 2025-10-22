@@ -1,6 +1,6 @@
 // src/components/layout/Navbar.jsx
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { AuthContext } from "./AuthContext";
 
 
@@ -25,7 +25,7 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div className="flex items-center gap-6">
           <Link to="/" className="hover:text-blue-500">Home</Link>
-          <Link to="/profile" className="hover:text-blue-500">My Profile</Link>
+           <Link to="/profile" className="hover:text-blue-600">My Profile</Link>
         </div>
 
         {/* Right Side */}

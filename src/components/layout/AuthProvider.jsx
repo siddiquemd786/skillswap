@@ -1,4 +1,3 @@
-// src/components/layout/Authprovider.jsx
 import React, { useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
@@ -14,13 +13,14 @@ import { AuthContext } from "./AuthContext";
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  
 
-  // 🔹 Create user (Signup)
-  const createUser = (email, password, name, photoURL) => {
+ 
+  const createUser =async (email, password, name, photoURL) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        // Optional: update displayName & photoURL
+     
         if (name || photoURL) {
           return updateProfile(result.user, {
             displayName: name,
@@ -33,30 +33,30 @@ const AuthProvider = ({ children }) => {
       });
   };
 
-  // 🔹 Login user
+  
   const loginUser = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  // 🔹 Logout user
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
   };
 
-  // 🔹 Track current user
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
     });
 
-    // cleanup when component unmounts
+ 
     return () => unsubscribe();
   }, []);
 
-  // 🔹 Context value
+
   const authInfo = {
     user,
     loading,
