@@ -1,10 +1,12 @@
 // src/pages/Home.jsx
-import React from 'react';
+import HeroSlider from "../components/home/HeroSlider";
+import PopularSkills from "../components/home/PopularSkills";
 
 const Home = () => {
   return (
-    <div>
-      This is home page
+    <div className="mt-20">
+      <HeroSlider />
+      <PopularSkills />
     </div>
   );
 };
