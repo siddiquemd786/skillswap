@@ -10,9 +10,9 @@ import HeroSlider from './components/home/HeroSlider';
 function App() {
   return (
     <div className="min-h-screen flex flex-col ">
-     <header className='space-y-10'>
+     <header >
        <Navbar />
-       <HeroSlider></HeroSlider>
+    
      </header>
 
       <main className="flex-1">

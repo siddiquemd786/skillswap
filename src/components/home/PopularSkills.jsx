@@ -1,5 +1,3 @@
-// src/components/home/PopularSkills.jsx
-
 
 import { useEffect, useState } from "react";
 import SkillCard from "../skills/SkillCard";
@@ -10,7 +8,7 @@ const PopularSkills = () => {
  const [loading, setLoading] = useState(true);
 
 useEffect(() => {
-  fetch("/data/skills.json")
+  fetch("/skills.json")
     .then((res) => res.json())
     .then((data) => {
       setSkills(data);
@@ -28,7 +26,7 @@ if (loading) {
 
 
   return (
-    <section className="py-10 px-6">
+    <section className=" bg-url- px-6">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
         Popular Skills
       </h2>

@@ -1,4 +1,4 @@
-// src/components/home/HeroSlider.jsx
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -10,17 +10,17 @@ const HeroSlider = () => {
   const slides = [
     {
       id: 1,
-      img: "https://images.squarespace-cdn.com/content/v1/6352feb487130b2f3f04bc78/3453bb7a-7f7e-4bdc-8fa2-8d4cd7c1fb1c/the-learning-experts_logo+cropped.png",
+      img: "https://thumbs.dreamstime.com/b/soft-skills-personal-fitness-responsibility-hr-human-resources-concept-141549671.jpg",
       text: "Learn from local experts",
     },
     {
       id: 2,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfY9Fpq8FnOEsRaghwMWBAxmYTFfJn0btJHQ&s",
+      img: "https://www.lawconsultancynetwork.com/wp-content/uploads/2021/01/iStock-546018942-1200px-wide-1024x692.jpg)",
       text: "Share your skills easily",
     },
     {
       id: 3,
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBtiRLyMJywya86FvE7TTGBHQN8wKcv0_Xig&s",
+      img: "https://media.istockphoto.com/id/889968488/photo/skill-concept.jpg?s=612x612&w=0&k=20&c=yDPoLvtvsnNbJQffOO8iMtfofeYLZ-r4PIdFCH7hBtc=",
       text: "Build connections, not just skills",
     },
   ];
@@ -41,13 +41,13 @@ const HeroSlider = () => {
     >
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
-          <div className="flex flex-col items-center justify-center h-[70vh]  text-center overflow-hidden">
+          <div className="flex flex-col items-center  bg-cover bg-center  justify-center h-[75vh] text-center overflow-hidden">
             
            
             <img
               src={slide.img}
               alt={slide.text}
-              className="w-full h-[350px] object-contain mb-6 pt-20 drop-shadow-lg"
+              className="w-full h-[340px] object-fill mb-4  drop-shadow-lg"
               variants={fadeUp}
               initial="hidden"
               animate="visible"

@@ -1,6 +1,7 @@
-// src/components/skills/SkillCard.jsx
+import { Link } from "react-router";
+
 const SkillCard = ({ skill }) => {
-  const { skillName, image, rating, price, category, description } = skill;
+  const { skillId, skillName, image, rating, price, category, description } = skill;
 
   return (
     <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
@@ -17,7 +18,12 @@ const SkillCard = ({ skill }) => {
           <span className="text-yellow-500 font-semibold">⭐ {rating}</span>
           <span className="text-blue-600 font-bold">${price}</span>
         </div>
-        <button className="btn btn-primary w-full mt-4">View Details</button>
+        <Link
+          to={`/skills/${skillId}`}
+          className="btn btn-primary w-full mt-4"
+        >
+          View Details
+        </Link>
       </div>
     </div>
   );
