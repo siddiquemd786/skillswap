@@ -13,14 +13,14 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       {
-    path: "/",
-    element: <HomePage />,
-    loader: () => fetch("/skills.json").then(res => res.json()), // load all skills
+         index: true, 
+        element: <HomePage />,
+    loader: () => fetch("/skills.json").then(res => res.json()), 
   },
   {
     path: "/skills/:id",
     element: <SkillDetails />,
-    loader: () => fetch("/skills.json").then(res => res.json()), // load all skills for details page
+    loader: () => fetch("/skills.json").then(res => res.json()), 
   },
       
     ],

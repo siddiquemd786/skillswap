@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Martin",
+    "skill": "Guitar",
+    "rating": 4.9,
+    "image": "https://furtadosschoolofmusic.com/wp-content/uploads/2024/11/guitar-lessons-1568x896.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Sara Hossain",
+    "skill": "English",
+    "rating": 4.8,
+    "image": "https://easypeasyeng.net/wp-content/uploads/2024/10/How_to_Practice_English_Speaking_with_a_Partner-1024x576.webp"
+  },
+  {
+    "id": 3,
+    "name": "Rahul Das",
+    "skill": "Web Development",
+    "rating": 4.9,
+    "image": "https://miro.medium.com/1*V-Jp13LvtVc2IiY2fp4qYw.jpeg"
+  }
+]

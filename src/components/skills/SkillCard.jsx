@@ -1,3 +1,4 @@
+// src/components/skills/SkillCard.jsx
 import { Link } from "react-router";
 
 const SkillCard = ({ skill }) => {

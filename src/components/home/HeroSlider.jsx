@@ -1,3 +1,4 @@
+// src/components/home/HeroSlider.jsx
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
