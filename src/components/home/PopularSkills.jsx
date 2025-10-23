@@ -1,7 +1,9 @@
+// src/components/home/PopularSkills.jsx
 
 
 import { useEffect, useState } from "react";
 import SkillCard from "../skills/SkillCard";
+
 
 const PopularSkills = () => {
   const [skills, setSkills] = useState([]);
@@ -30,6 +32,7 @@ if (loading) {
     <section className=" bg-url- px-6">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
         Popular Skills
+
       </h2>
 
       {skills.length === 0 ? (
