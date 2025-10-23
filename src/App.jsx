@@ -4,12 +4,14 @@ import './App.css';
 import { Outlet } from "react-router";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import HeroSlider from './components/home/HeroSlider';
 
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col ">
+    <>
+     <Toaster position="top-center" />
+       <div className="min-h-screen flex flex-col ">
      <header >
        <Navbar />
     
@@ -20,6 +22,8 @@ function App() {
       </main>
       <Footer />
     </div>
+    </>
+ 
   );
 }
 

@@ -8,6 +8,7 @@ import Profile from "../pages/Profile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PriveteRoute from "./PriveteRoute";
+import BookSession from "../pages/BookSession";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path:"/bookSession",
+        element: <BookSession></BookSession>
+      }
     ],
   },
 ]);

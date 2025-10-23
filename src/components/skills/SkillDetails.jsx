@@ -34,9 +34,9 @@ const SkillDetails = () => {
               <p><span className="font-semibold">Category:</span> {skill.category}</p>
             </div>
           </div>
-          <button className="mt-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition w-full md:w-auto">
+          <Link to={"/bookSession"} className="mt-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition w-full md:w-auto">
             Book Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

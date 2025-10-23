@@ -16,7 +16,7 @@ const Cyl = () => {
   return (
   <group rotation={[0,1.0,.09]}>
       <mesh ref={cyl} >
-      <cylinderGeometry args={[3, 3, 3, 30, 30, true]} />
+      <cylinderGeometry args={[2.5, 2.5, 2.5, 30, 30, true]} />
       <meshStandardMaterial map={tex} transparent    
         alphaTest={0.01}        
         depthWrite={false}  side={THREE.DoubleSide} />
