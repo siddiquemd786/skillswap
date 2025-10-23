@@ -1,7 +1,9 @@
+// src/components/layout/Navbar.jsx
 
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
+import logo from "../../assets/logo.png"
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -18,7 +20,9 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 py-3 flex  justify-between  md:flex-row md:items-center md:justify-between">
         
       
-        <div className="flex justify-start items-center mb-2 md:mb-0">
+        <div className="flex justify-start gap-1 items-center mb-2 md:mb-0">
+          
+          <img className="w-10 h-10 rounded-full" src={logo} alt="" />
           <Link to="/" className="text-2xl font-bold text-blue-600">
             SkillTrade
           </Link>
