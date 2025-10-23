@@ -1,107 +1,114 @@
 // src/pages/Login.jsx
 import React, { useState, useContext } from "react";
-
-
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../components/layout/AuthContext";
+import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { loginUser, resetPassword } = useContext(AuthContext);
+  const { loginUser, resetPassword, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectPath = location.state?.from?.pathname || "/";
 
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ type: "", text: "" });
-  const [showPassword,setShowPassword]=useState(false)
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage({ type: "", text: "" });
 
     if (!form.email || !form.password) {
-      setMessage({ type: "error", text: "Please enter both email and password" });
+      toast.error("Please fill all fields!");
       return;
     }
-     if(loading){
-setLoading(<span className="loading loading-dots loading-xl"></span>);
-     }
-    
+
+    setLoading(true);
     try {
       await loginUser(form.email, form.password);
-      setMessage({ type: "success", text: "Login successful! Redirecting..." });
-      setTimeout(() => navigate("/"), 1000);
+      toast.success("Login successful!");
+      navigate(redirectPath);
     } catch {
-      setMessage({ type: "error", text: "Invalid email or password" });
+      toast.error("Invalid email or password!");
     } finally {
       setLoading(false);
     }
   };
 
-
   const handleForgotPassword = async () => {
     if (!form.email) {
-      setMessage({ type: "error", text: "Please enter your email first." });
+      toast.error("Enter email first!");
       return;
     }
 
     try {
       await resetPassword(form.email);
-      setMessage({
-        type: "success",
-        text: "Password reset email sent! Please check your inbox.",
-      });
+      toast.success("Password reset mail sent!");
     } catch (err) {
-      setMessage({ type: "error", text: err.message });
+      toast.error(err.message);
     }
   };
 
-  const showPasswordHandaler=()=>{
-    setShowPassword(!showPassword)
-  }
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleLogin();
+      toast.success("Logged in with Google!");
+      navigate(redirectPath);
+    } catch {
+      toast.error("Google login failed!");
+    }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
-       
-        <h2 className="text-3xl font-semibold text-center mb-6 text-gray-800">
-          Login
+    <div className="min-h-screen flex items-center justify-center  mt-8 px-4">
+      <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md border">
+
+        <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
+          Welcome Back 👋
         </h2>
 
-       
         <form onSubmit={handleSubmit}>
-        
+
+          {/* Email */}
           <div className="mb-4">
-            <label className="block mb-1 font-medium text-gray-700">Email</label>
+            <label className="block font-semibold mb-1">Email</label>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="you@example.com"
-              className="w-full border rounded-lg p-2 focus:ring focus:ring-blue-200 outline-none"
+              className="input input-bordered w-full"
             />
           </div>
 
-         
+          {/* Password */}
           <div className="mb-4">
-            <label className="block mb-1 font-medium text-gray-700">Password</label>
-           <div className="relative">
-           <input
-              type={(!showPassword) ? "password": "text" }
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              placeholder="••••••••"
-              className="w-full border rounded-lg p-2 focus:ring focus:ring-blue-200 outline-none"
-            />
-            <button onClick={showPasswordHandaler} className=" btn-sm  absolute right-2 top-3"> {(!showPassword) ? <FaEye />: <FaEyeSlash />}   </button>
-
-           </div>
+            <label className="block font-semibold mb-1">Password</label>
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                placeholder="••••••••"
+                className="input input-bordered w-full"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-3 text-gray-600"
+              >
+                {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+              </button>
+            </div>
           </div>
 
-         
+          {/* Forgot Password */}
           <div className="flex justify-end mb-4">
             <button
               type="button"
@@ -112,36 +119,35 @@ setLoading(<span className="loading loading-dots loading-xl"></span>);
             </button>
           </div>
 
-        
-          {message.text && (
-            <p
-              className={`text-sm mb-3 ${
-                message.type === "error" ? "text-red-600" : "text-green-600"
-              }`}
-            >
-              {message.text}
-            </p>
-          )}
-
-        
+          {/* Login Button */}
           <button
             type="submit"
             disabled={loading}
-            className={`w-full ${
-              loading ? "bg-blue-300" : "bg-blue-600 hover:bg-blue-700"
-            } text-white rounded-lg py-2 font-semibold transition`}
+            className="w-full btn btn-primary font-semibold"
           >
-            {loading ? "Logging in..." : "Login"}
+            {loading ? "Loading..." : "Login"}
           </button>
 
-          
-          <p className="text-center text-sm text-gray-500 mt-4">
-            Don’t have an account?{" "}
+          {/* Google Login */}
+          <div className="divider">OR</div>
+          <button
+            onClick={handleGoogleSignIn}
+            type="button"
+            className="btn btn-outline w-full flex items-center gap-2"
+          >
+            <FcGoogle size={22} />
+            Continue with Google
+          </button>
+
+          {/* Signup Link */}
+          <p className="text-center text-gray-500 mt-4">
+            New here?{" "}
             <Link to="/register" className="text-blue-600 hover:underline">
-              Register
+              Create an account
             </Link>
           </p>
         </form>
+
       </div>
     </div>
   );

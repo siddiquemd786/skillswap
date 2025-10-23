@@ -1,3 +1,4 @@
+// src/pages/Register.jsx
 
 import React, { useState, useContext } from "react";
 
@@ -67,10 +68,10 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 mt-10 px-4">
       <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
         {/* 🔹 Title */}
-        <h2 className="text-3xl font-semibold text-center mb-6 text-gray-800">
+        <h2 className="text-3xl font-semibold text-center  text-gray-800">
           Sign Up
         </h2>
 
