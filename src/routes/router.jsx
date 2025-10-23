@@ -1,3 +1,4 @@
+// src/routes/Router.jsx
 
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
@@ -6,6 +7,7 @@ import SkillDetails from "../components/skills/SkillDetails";
 import Profile from "../pages/Profile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PriveteRoute from "./PriveteRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: <PriveteRoute> <Profile /> </PriveteRoute>,
       },
       {
         path: "/login",

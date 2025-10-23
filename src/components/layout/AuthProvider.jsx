@@ -1,3 +1,4 @@
+// src/components/layout/Authprovider.jsx
 
 
 import { auth } from "../../firebase/firebase.config";

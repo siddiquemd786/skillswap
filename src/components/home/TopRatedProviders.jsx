@@ -1,3 +1,4 @@
+// src/components/home/TopRatedProviders.jsx
 
 import React, { useEffect, useState } from "react";
 import providersData from "../../data/topProviders.json"; 

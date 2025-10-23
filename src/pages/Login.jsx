@@ -4,6 +4,7 @@ import React, { useState, useContext } from "react";
 
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../components/layout/AuthContext";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { loginUser, resetPassword } = useContext(AuthContext);
@@ -12,7 +13,7 @@ const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
-
+  const [showPassword,setShowPassword]=useState(false)
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
@@ -23,8 +24,10 @@ const Login = () => {
       setMessage({ type: "error", text: "Please enter both email and password" });
       return;
     }
-
-    setLoading(true);
+     if(loading){
+setLoading(<span className="loading loading-dots loading-xl"></span>);
+     }
+    
     try {
       await loginUser(form.email, form.password);
       setMessage({ type: "success", text: "Login successful! Redirecting..." });
@@ -54,6 +57,10 @@ const Login = () => {
     }
   };
 
+  const showPasswordHandaler=()=>{
+    setShowPassword(!showPassword)
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
@@ -80,14 +87,18 @@ const Login = () => {
          
           <div className="mb-4">
             <label className="block mb-1 font-medium text-gray-700">Password</label>
-            <input
-              type="password"
+           <div className="relative">
+           <input
+              type={(!showPassword) ? "password": "text" }
               name="password"
               value={form.password}
               onChange={handleChange}
               placeholder="••••••••"
               className="w-full border rounded-lg p-2 focus:ring focus:ring-blue-200 outline-none"
             />
+            <button onClick={showPasswordHandaler} className=" btn-sm  absolute right-2 top-3"> {(!showPassword) ? <FaEye />: <FaEyeSlash />}   </button>
+
+           </div>
           </div>
 
          

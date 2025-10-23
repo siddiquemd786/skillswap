@@ -1,7 +1,11 @@
 // src/components/skills/SkillCard.jsx
+import { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../layout/AuthContext";
 
 const SkillCard = ({ skill }) => {
+  const {user}=use(AuthContext)
+
   const { skillId, skillName, image, rating, price, category, description } = skill;
 
   return (
@@ -19,12 +23,18 @@ const SkillCard = ({ skill }) => {
           <span className="text-yellow-500 font-semibold">⭐ {rating}</span>
           <span className="text-blue-600 font-bold">${price}</span>
         </div>
-        <Link
-          to={`/skills/${skillId}`}
+
+
+        
+          <Link
+          to={user && user.email ? `/skills/${skillId}` : "/login"}
           className="btn btn-primary w-full mt-4"
         >
           View Details
         </Link>
+
+        
+        
       </div>
     </div>
   );

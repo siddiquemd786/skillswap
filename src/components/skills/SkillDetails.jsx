@@ -3,6 +3,7 @@
 import { useParams, useLoaderData, Link } from "react-router";
 
 const SkillDetails = () => {
+  
   const { id } = useParams();
   const skillsData = useLoaderData(); 
 

@@ -3,10 +3,15 @@ import { useContext } from "react";
 import { AuthContext } from "../components/layout/AuthContext";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
+import Loading from "../components/home/Loading";
 
 
 const Profile = () => {
-  const { user } = useContext(AuthContext);
+  const { user,loading } = useContext(AuthContext);
+
+  if(loading){
+    return <Loading></Loading>
+}
 
   const handleUpdateProfile = () => {
     const newName = prompt("Enter your new display name:");
