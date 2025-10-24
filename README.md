@@ -1,3 +1,4 @@
+<!-- README.md -->
 # SkillSwap
 
 SkillSwap is an interactive platform that allows individuals to offer, learn, and trade skills within their local community. Whether it’s music, language learning, coding guidance, or fitness coaching — SkillSwap connects users with skill providers.
@@ -5,8 +6,7 @@ SkillSwap is an interactive platform that allows individuals to offer, learn, an
 ---
 
 ## 🚀 Live Demo
-🔗 **Live URL:** *(Add your deployed link here)*
-
+🔗 **Live URL:** 
 ---
 
 ## 🎯 Purpose
