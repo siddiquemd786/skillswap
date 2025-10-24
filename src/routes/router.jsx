@@ -1,3 +1,4 @@
+// src/routes/router.jsx
 // src/routes/Router.jsx
 
 import { createBrowserRouter } from "react-router-dom";
@@ -9,6 +10,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PriveteRoute from "./PriveteRoute";
 import BookSession from "../pages/BookSession";
+import Loading from "../components/home/Loading";
 
 const router = createBrowserRouter([
   {
@@ -19,11 +21,13 @@ const router = createBrowserRouter([
         index: true, 
         element: <HomePage />,
         loader: () => fetch("/skills.json").then((res) => res.json()),
+        hydrateFallbackElement:<Loading></Loading>
       },
       {
         path: "/skills/:id",
         element: <SkillDetails />,
         loader: () => fetch("/skills.json").then((res) => res.json()),
+         hydrateFallbackElement:<Loading></Loading>
       },
       {
         path: "/profile",

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Facebook, Instagram, Twitter, Mail, Phone } from "lucide-react";
 
@@ -6,7 +7,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300 mt-10">
       <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        {/* 🔹 1. Contact Info */}
+    
         <div>
           <h2 className="text-xl font-semibold text-white mb-3">Contact Us</h2>
           <p className="flex items-center gap-2">
@@ -18,7 +19,7 @@ const Footer = () => {
           <p className="mt-2">Dhaka, Bangladesh</p>
         </div>
 
-        {/* 🔹 2. Social Links */}
+       
         <div>
           <h2 className="text-xl font-semibold text-white mb-3">Follow Us</h2>
           <div className="flex items-center gap-4">
@@ -34,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* 🔹 3. Privacy Policy */}
+      
         <div>
           <h2 className="text-xl font-semibold text-white mb-3">Legal</h2>
           <p className="cursor-pointer hover:text-white transition">
@@ -49,7 +50,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+     
       <div className="border-t border-gray-700 text-center py-4 text-sm text-gray-400">
         © {new Date().getFullYear()} SkillTrade — All rights reserved.
       </div>

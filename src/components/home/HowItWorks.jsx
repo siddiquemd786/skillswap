@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FaSearch, FaComments, FaChalkboardTeacher } from "react-icons/fa";
 

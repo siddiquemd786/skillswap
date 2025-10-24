@@ -1,4 +1,5 @@
 // src/pages/Profile.jsx
+
 import { useContext } from "react";
 import { AuthContext } from "../components/layout/AuthContext";
 import { updateProfile } from "firebase/auth";
@@ -35,7 +36,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-16 bg-white rounded-xl shadow-lg p-6 text-center">
+    <div className="max-w-md mx-auto mt-20 bg-white rounded-xl shadow-lg p-6 text-center">
       <img
         src={user.photoURL || "https://via.placeholder.com/100"}
         alt="User"
@@ -44,6 +45,7 @@ const Profile = () => {
       <h2 className="text-2xl font-semibold mb-2">
         {user.displayName || "Unnamed User"}
       </h2>
+      
       <p className="text-gray-600 mb-4">{user.email}</p>
       <button
         onClick={handleUpdateProfile}

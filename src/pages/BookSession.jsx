@@ -1,8 +1,20 @@
 // src/pages/BookSession.jsx
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../components/layout/AuthContext";
+import Loading from "../components/home/Loading";
+
+
+
 
 const BookSession = () => {
+
+const { loading } = useContext(AuthContext);
+
+    if(loading){
+    return <Loading></Loading> }
+
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -14,16 +26,16 @@ const BookSession = () => {
       return;
     }
 
-    // Show success message
+   
     toast.success("Session booked successfully!");
 
-    // Clear form
+  
     setName("");
     setEmail("");
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg">
+    <div className="max-w-md mx-auto bg-white p-6 mt-24 rounded-xl shadow-lg">
       <h2 className="text-2xl font-semibold mb-4 text-center">Book Session</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
 

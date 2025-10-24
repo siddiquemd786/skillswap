@@ -1,5 +1,4 @@
 // src/components/layout/Navbar.jsx
-
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
@@ -32,6 +31,7 @@ const Navbar = () => {
         <div className="hidden md:flex justify-center items-center gap-6 flex-1">
           <Link to="/" className="hover:text-blue-500">Home</Link>
           <Link to="/profile" className="hover:text-blue-500">My Profile</Link>
+         
         </div>
 
        

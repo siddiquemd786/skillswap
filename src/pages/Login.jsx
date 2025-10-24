@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState, useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../components/layout/AuthContext";
@@ -73,7 +72,7 @@ const Login = () => {
 
         <form onSubmit={handleSubmit}>
 
-          {/* Email */}
+         
           <div className="mb-4">
             <label className="block font-semibold mb-1">Email</label>
             <input
@@ -86,7 +85,7 @@ const Login = () => {
             />
           </div>
 
-          {/* Password */}
+        
           <div className="mb-4">
             <label className="block font-semibold mb-1">Password</label>
             <div className="relative">
@@ -108,7 +107,7 @@ const Login = () => {
             </div>
           </div>
 
-          {/* Forgot Password */}
+        
           <div className="flex justify-end mb-4">
             <button
               type="button"
@@ -119,7 +118,7 @@ const Login = () => {
             </button>
           </div>
 
-          {/* Login Button */}
+         
           <button
             type="submit"
             disabled={loading}
@@ -128,7 +127,7 @@ const Login = () => {
             {loading ? "Loading..." : "Login"}
           </button>
 
-          {/* Google Login */}
+      
           <div className="divider">OR</div>
           <button
             onClick={handleGoogleSignIn}
@@ -139,7 +138,7 @@ const Login = () => {
             Continue with Google
           </button>
 
-          {/* Signup Link */}
+        
           <p className="text-center text-gray-500 mt-4">
             New here?{" "}
             <Link to="/register" className="text-blue-600 hover:underline">

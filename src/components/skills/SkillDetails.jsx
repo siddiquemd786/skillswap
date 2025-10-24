@@ -1,5 +1,3 @@
-// src/components/skills/SkillDetails.jsx
-
 import { useParams, useLoaderData, Link } from "react-router";
 
 const SkillDetails = () => {

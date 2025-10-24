@@ -1,4 +1,3 @@
-// src/components/skills/SkillCard.jsx
 import { use } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../layout/AuthContext";

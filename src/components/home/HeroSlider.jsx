@@ -1,13 +1,21 @@
 // src/components/home/HeroSlider.jsx
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import Loading from "./Loading";
+import { useContext } from "react";
+import { AuthContext } from "../layout/AuthContext";
 
 const HeroSlider = () => {
+ const { loading } = useContext(AuthContext);
+
+    if(loading){
+    return <Loading></Loading>
+} 
+  
   const slides = [
     {
       id: 1,

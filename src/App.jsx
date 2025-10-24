@@ -1,13 +1,15 @@
 // src/App.jsx
 import './App.css';
 
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
 import { Toaster } from "react-hot-toast";
+import Loading from './components/home/Loading';
 
 function App() {
+      const {state} = useNavigation()
   return (
     <>
      <Toaster position="top-center" />
@@ -18,7 +20,7 @@ function App() {
      </header>
 
       <main className="flex-1">
-        <Outlet />
+         {state==="loading" ? <Loading/> : <Outlet></Outlet>}  
       </main>
       <Footer />
     </div>
