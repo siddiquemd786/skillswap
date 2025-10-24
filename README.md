@@ -7,6 +7,7 @@ SkillSwap is an interactive platform that allows individuals to offer, learn, an
 
 ## 🚀 Live Demo
 🔗 **Live URL:** 
+https://skillboostup.netlify.app/
 ---
 
 ## 🎯 Purpose
